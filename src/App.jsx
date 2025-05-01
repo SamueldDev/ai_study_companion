@@ -11,12 +11,14 @@ import NewTopic from './pages/NewTopic'
 import StudyMaterial from './pages/StudyMaterial'
 import MyTopic from './pages/MyTopic'
 import Navbar from './components/Navbar'
+import Setting from './profile/Setting'
+import NotFound from './pages/NotFound'
+
 
 
 
 function App() {
   
-
   return (
     <>
        <BrowserRouter>
@@ -36,9 +38,12 @@ function App() {
                 </PrivateRoute>
               }
             />
-            
+
+
+
+
             <Route
-              path='/flashcards'
+              path='/review/:topicId?'
               element={
                 <PrivateRoute>
                   <FlashCardReviews />
@@ -73,9 +78,18 @@ function App() {
               }
             />
 
+          <Route
+              path='/profile-settings'
+              element={
+                <PrivateRoute>
+                  <Setting />
+                </PrivateRoute>
+              }
+            />
+
+        <Route path="*" element={<NotFound />} />
 
           </Routes>
-
 
        </BrowserRouter>
 

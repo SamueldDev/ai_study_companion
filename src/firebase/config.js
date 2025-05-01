@@ -8,7 +8,6 @@ import { getFirestore } from "firebase/firestore"
 
 const FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_API_KEY
 
-console.log(FIREBASE_API_KEY)
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
